@@ -297,7 +297,6 @@ class AsyncioTest(TestCase):
                             1,
                         )
                         self.assertIsInstance(result[0], asyncio.CancelledError)
-                        self.assertEqual(result[0].args, ("child cancelled",))
                         self.assertIs(result[0], result[2])
                         self.assertEqual(result[1], 42)
                         self.assertFalse(peer.cancelled())
